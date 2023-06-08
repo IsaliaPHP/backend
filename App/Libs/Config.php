@@ -7,9 +7,9 @@ class Config {
     /**
      * utiliza de forma predeterminada MySQL (o MariaDB)
      */
-    const CONNECTION_STRING = 'mysql:host=127.0.0.1;dbname=backend;charset=utf8';
-    const USER = 'nelson';
-    const PASSWORD = 'secret';
+    const CONNECTION_STRING = 'mysql:host=127.0.0.1;dbname=NombreBaseDatos;charset=utf8';
+    const USER = 'UsuarioBaseDatos';
+    const PASSWORD = 'ClaveDelUsuario';
     const PARAMETERS = [
         PDO::ATTR_PERSISTENT => true, //conexión persistente
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
