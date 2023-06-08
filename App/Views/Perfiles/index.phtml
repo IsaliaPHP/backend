@@ -1,0 +1,42 @@
+
+<header>
+	<h1>
+		<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+		Lista de Perfiles
+	</h1>
+</header>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Perfiles</h3>
+			</div>
+			<div class="panel-body">
+            <?= Html::linkTo("Crear Perfil", "perfiles/create",  "class=\"btn btn-success\"")?>
+				<table class="table table-bordered table-stripped mt-2">              	
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                	<?php foreach($list_of_items as $item):?>
+                	<tr>
+						<td width="90%"><?= $item['nombre']?></td>
+						<td>
+                            <?= Html::linkTo("<i class='glyphicon glyphicon-pencil'></i>", "perfiles/edit/" . $item['id'], 
+                            "class=\"btn btn-info btn-sm\" title=\"Editar Perfil\"")?>
+							<?= Html::linkTo("<i class='glyphicon glyphicon-link'></i>", "perfiles/asignar_recursos/" . $item['id'], 
+                            "class=\"btn btn-primary btn-sm\" title=\"Asignar recursos\"")?>
+                		</td>
+					</tr>
+                	<?php endforeach;?>
+                    </tbody>
+                </table>
+			</div>
+		</div>
+	</div>
+</div>
+

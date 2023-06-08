@@ -1,0 +1,39 @@
+<header>
+    <h1>
+        <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+        Crear Recurso
+    </h1>
+</header>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Información del Recurso</h3>
+            </div>
+            <div class="panel-body">
+
+            <?= Html::formOpen("recursos/create","class=\"form-horizontal mt-2\"") ?>
+                    <div class="form-group">
+                        <label for="data_controlador" class="col-sm-2 control-label">Controlador</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="data_controlador" name="data[controlador]">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="data_accion" class="col-sm-2 control-label">Acción</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="data_accion" name="data[accion]">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group text-right pr-2">
+                    <?= Html::linkTo("Cancelar", "recursos", 
+                            "class=\"btn btn-default\"")?>
+                        <button type="submit" class="btn btn-success">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

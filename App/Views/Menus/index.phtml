@@ -1,0 +1,42 @@
+
+<header>
+	<h1>
+		<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+		Lista de Menus
+	</h1>
+</header>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Menus</h3>
+			</div>
+			<div class="panel-body">
+				<?= Html::linkTo("Crear Menú", "menus/create",  "class=\"btn btn-success\"")?>
+                <table class="table table-bordered table-stripped mt-2">              	
+                    <thead>
+                        <tr>
+                            <th width="40%">Nombre</th>
+							<th width="40%">Url</th>							
+							<th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                	<?php foreach($list_of_items as $item):?>
+                	<tr>
+						<td width="50%"><?= $item['nombre']?></td>
+						<td width="40%"><?= $item['url']?></td>
+						<td>
+                            <?= Html::linkTo("Editar", "menus/edit/" . $item['id'], 
+                            "class=\"btn btn-info btn-sm\"")?>
+                		</td>
+					</tr>
+                	<?php endforeach;?>
+                    </tbody>
+                </table>
+			</div>
+		</div>
+	</div>
+</div>
+

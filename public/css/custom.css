@@ -1,0 +1,12 @@
+.descripcion {
+	padding: 0.5em;
+	margin-top: 0.2em;
+}
+.linea-punteada {
+	display: block;
+	border-top: 1px dotted black;
+	margin-top: 0.2em;
+}
+.mt-2 {margin-top: 1em;}
+.mr-2 {margin-right: 1em;}
+.pr-2 {padding-right: 1em;} 
