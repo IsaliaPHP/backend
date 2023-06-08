@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jun 08, 2023 at 11:57 PM
+-- Generation Time: Jun 09, 2023 at 12:14 AM
 -- Server version: 5.5.42
 -- PHP Version: 7.0.8
 
@@ -31,7 +31,7 @@ CREATE TABLE `acceso` (
   `usuario_id` int(11) DEFAULT NULL,
   `fecha_acceso` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `ip_acceso` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `acceso`
@@ -49,7 +49,11 @@ INSERT INTO `acceso` (`id`, `usuario_id`, `fecha_acceso`, `ip_acceso`) VALUES
 (9, 2, '2023-06-08 21:19:17', '::1'),
 (10, 1, '2023-06-08 21:40:50', '::1'),
 (11, 2, '2023-06-08 21:41:10', '::1'),
-(12, 1, '2023-06-08 21:56:25', '::1');
+(12, 1, '2023-06-08 21:56:25', '::1'),
+(13, 2, '2023-06-08 22:08:01', '::1'),
+(14, 1, '2023-06-08 22:10:41', '::1'),
+(15, 2, '2023-06-08 22:10:54', '::1'),
+(16, 1, '2023-06-08 22:11:21', '::1');
 
 -- --------------------------------------------------------
 
@@ -128,7 +132,7 @@ CREATE TABLE `perfil_recurso` (
   `recurso_id` int(11) DEFAULT NULL,
   `perfil_id` int(11) DEFAULT NULL,
   `fec_actualizacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `perfil_recurso`
@@ -136,8 +140,9 @@ CREATE TABLE `perfil_recurso` (
 
 INSERT INTO `perfil_recurso` (`id`, `recurso_id`, `perfil_id`, `fec_actualizacion`) VALUES
 (2, 7, 1, '2023-05-31 19:58:07'),
-(3, 5, 2, '2023-06-08 21:56:13'),
-(4, 6, 2, '2023-06-08 21:56:13');
+(5, 5, 2, '2023-06-08 22:11:14'),
+(6, 6, 2, '2023-06-08 22:11:14'),
+(7, 8, 2, '2023-06-08 22:11:14');
 
 -- --------------------------------------------------------
 
@@ -151,7 +156,7 @@ CREATE TABLE `recurso` (
   `accion` varchar(45) DEFAULT NULL,
   `activo` int(11) DEFAULT NULL,
   `ult_actualizacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `recurso`
@@ -164,7 +169,8 @@ INSERT INTO `recurso` (`id`, `controlador`, `accion`, `activo`, `ult_actualizaci
 (4, 'Empresas', '*', 1, '2023-05-31 17:05:19'),
 (5, 'Usuarios', '*', 1, '2023-05-31 17:05:40'),
 (6, 'Accesos', '*', 1, '2023-05-31 17:05:47'),
-(7, '*', '*', 1, '2023-05-31 19:57:51');
+(7, '*', '*', 1, '2023-05-31 19:57:51'),
+(8, 'Home', 'index', 1, '2023-06-08 22:11:06');
 
 -- --------------------------------------------------------
 
@@ -253,7 +259,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `acceso`
 --
 ALTER TABLE `acceso`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `empresa`
 --
@@ -273,12 +279,12 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT for table `perfil_recurso`
 --
 ALTER TABLE `perfil_recurso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `recurso`
 --
 ALTER TABLE `recurso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
