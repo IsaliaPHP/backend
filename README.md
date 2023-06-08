@@ -5,9 +5,15 @@ Backend escrito con IsaliaPHP
 El backend escrito en IsaliaPHP es una herramienta para no arrancar desde cero en la que se incluyen usuarios, perfiles, recursos, menus, registro de accesos, empresas.
 
 ## Configuración
-Para utilizar este proyecto es necesario cargar el script básico de la base de datos que se encuentra en la raíz del repositorio con el nombre **backend.sql**
-
+Para utilizar este proyecto es necesario cargar el script básico de la base de datos que se encuentra en la raíz del repositorio con el nombre **backend.sql**. El diagrama de la base de datos puede verse en el archivo **diagrama-db.png** junto al script de la base de datos.
 Utiliza una base de datos MySQL (o MariaDB)
+
+## Conectar la aplicación con la base de datos
+Para realizar la configuración de la conexión a la base de datos es necesario ir a la clase Config que está alojada en App\Libs
+En ella debemos modificar las constantes
+- CONNECTION_STRING
+- USER
+- PASSWORD
 
 ## Usuarios
 Los usuarios creados son los siguientes:
