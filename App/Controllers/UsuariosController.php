@@ -39,4 +39,10 @@ class UsuariosController extends ScaffoldController
         Router::to("Usuarios");
     }
 
+    public function perfil()
+    {
+        $this->current_item = (new Usuario)->findById(Session::get("user_id"));
+        Load::view("Usuarios/perfil", $this->getProperties());
+    }
+
 }

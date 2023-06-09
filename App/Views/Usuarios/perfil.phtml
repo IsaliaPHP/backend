@@ -1,0 +1,61 @@
+<header>
+    <h1>
+        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+        Perfil del Usuario
+    </h1>
+</header>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Información del Usuario</h3>
+            </div>
+            <div class="panel-body">
+                <?= Html::formOpen("#", 
+                "class=\"form-horizontal mt-2\"") ?>
+                    <div class="form-group">
+                        <label for="data_nombre" class="col-sm-2 control-label">Nombre</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" 
+                                id="data_nombre" name="data[nombre]"
+                                value="<?=$current_item['nombre']?>" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="data_login" class="col-sm-2 control-label">Login</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" 
+                                id="data_login" name="data[login]"
+                                value="<?=$current_item['login']?>" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="data_email" class="col-sm-2 control-label">Correo</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" 
+                                id="data_email" name="data[email]"
+                                value="<?=$current_item['email']?>" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="data_empresa_id" class="col-sm-2 control-label">Empresa</label>
+                        <div class="col-sm-10">
+                            <select disabled class="form-control" id="data_empresa_id" name="data[empresa_id]">
+                                <?= Html::optionsForSelect((new Empresa)->findAll("WHERE activa = 1"), "id", "razon_social", $current_item['empresa_id']);?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="data_perfil_id" class="col-sm-2 control-label">Perfil</label>
+                        <div class="col-sm-10">
+                            <select disabled class="form-control" id="data_perfil_id" name="data[perfil_id]">
+                                <?= Html::optionsForSelect((new Perfil)->findAll("WHERE activo = 1"), "id", "nombre", $current_item['perfil_id']);?>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
