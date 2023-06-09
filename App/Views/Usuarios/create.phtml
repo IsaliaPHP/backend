@@ -39,6 +39,14 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="data_empresa_id" class="col-sm-2 control-label">Empresa</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="data_empresa_id" name="data[empresa_id]">
+                                <?= Html::optionsForSelect((new Empresa)->findAll("WHERE activa = 1"), "id", "razon_social");?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="data_perfil_id" class="col-sm-2 control-label">Perfil</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="data_perfil_id" name="data[perfil_id]">

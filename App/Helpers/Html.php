@@ -127,12 +127,12 @@ class Html
         return "<button type=\"$type\" $options>$value</button>";
     }
 
-    public static function optionsForSelect(array $data, string $value_field, string $show_field, $selected = null)
+    public static function optionsForSelect(array $data, string $value_field, string $show_field, $selected_value = null)
     {
         $result = "<option value=\"\">Seleccione</option>" . PHP_EOL;
         foreach($data as $item) {
             $selected = "";
-            if ($selected == $item[$value_field] && isset($selected)) {
+            if ($selected_value == $item[$value_field] && !empty($selected_value)) {
                 $selected = "selected=\"selected\"";
             }
 
