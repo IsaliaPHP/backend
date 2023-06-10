@@ -46,7 +46,7 @@ class Report
             
             
         } else {
-            $log = ROOT . DS . 'App' . DS . 'Temp' . DS . 'Logs' . DS . date('Y-m-d') . '.txt';
+            $log = APP_PATH . 'Temp' . DS . 'Logs' . DS . date('Y-m-d') . '.txt';
             ini_set('error_log', $log);
 
             $message = "Uncaught exception: '" . get_class($exception) . "'";
